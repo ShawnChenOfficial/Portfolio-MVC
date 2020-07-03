@@ -1,0 +1,129 @@
+﻿@{
+    ViewData["Title"] = "Resume";
+}
+<div class="text-center pt-20vh" id="first-Page-20vh">
+    <div class="container">
+        <h1 class="text-white mb-5">Education</h1>
+        <div class="row">
+            <ul class="timeline mt-5 col-lg-6 col-md-8 col-10 m-auto text-left">
+                <li>
+                    <h5>Bachelor of Information Technology</h5>
+                    <a target="_blank" href="https://www.sit.ac.nz/"><sup>Southern Institute of Technology, Invercargill, New Zealand</sup></a>
+                    <br />
+                    <sup>Feb, 2018 ~ Dec, 2020</sup>
+                    <p>Description</p>
+                </li>
+                <li>
+                    <h5>Worded as a Mechanical Engineer</h5>
+                    <a target="_blank" href="http://www.unomin.com/main.php"><sup>UNO International Co.,Ltd, Tianjin, China</sup></a>
+                    <br />
+                    <sup>time</sup>
+                    <p>Description</p>
+                </li>
+                <li>
+                    <h5>Institute name</h5>
+                    <a target="_blank" href="https://eweb.hebut.edu.cn/"><sup>Hebei University of Technology, Tianjin, China</sup></a>
+                    <br />
+                    <sup>time</sup>
+                    <p>Description</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="text-center" id="second-Page">
+    <div class="container vertical-middle pt-v-sm-20vh">
+        <h1 class="text-white pb-3">Skills in Web App Development</h1>
+        <div class="row">
+            <ul class="timeline mt-5 col-lg-6 col-md-8 col-10  m-auto text-left">
+                <li class="mt-5">
+                    <h5 class="pb-2">Programming Languages</h5>
+                    <ul>
+                        <li>C#, Java</li>
+                        <li>Html, Css, Javascript</li>
+                        <li>Jquery, Bootstrap</li>
+                        <li>SQL (mostly MySQL)</li>
+                    </ul>
+                </li>
+                <li class="mt-5">
+                    <h5 class="pb-2">Familiar Frameworks</h5>
+                    <ul>
+                        <li>Asp.Net FrameWork / Asp.Net Core</li>
+                        <li>MVC (Model View Controller)</li>
+                        <li>Entity Framework</li>
+                        <li>Vue.js</li>
+                        <li>React (Still learning)</li>
+                    </ul>
+                </li>
+                <li class="mt-5">
+                    <h5 class="pb-2">Cloud Deployment</h5>
+                    <ul>
+                        <li>
+                            Familiar with Laas, Iaas, Paas
+                        </li>
+                        <li>
+                            Understand concept of k8s (Kubernete)
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="text-center" id="third-Page">
+    <div class="container vertical-middle pt-v-sm-20vh">
+        <div class="pt-5">
+            <div class="card mb-5 pb-5 bg-none m-auto border-0">
+                <span class="material-icons card-img-top pt-4 font-88px text-wheat">library_books</span>
+                <div class="card-body">
+                    <h5 class="card-title text-white">Transcript while studying at SIT</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <div class="text-center border-div-trigger m-auto" style="width:330px">
+                        <a target="_blank" class="text-decoration-none" href="~/images/transcript.png">See Shawn's transcript in full version</a>
+                        <div class="border-div"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<span class="material-icons" id="Top">
+    arrow_upward
+</span>
+<span class="material-icons" id="furtherInfo">
+    arrow_downward
+</span>
+<script>$(window).scroll(function () {
+        var current = $(document).scrollTop();
+        var firstP = $('#first-Page-20vh').offset().top;
+        var secondP = $('#second-Page').offset().top;
+
+        if (!ToDisableNavigationArrows()) {
+            if (current <= (firstP + 10)) {
+                $('#furtherInfo').css({ display: 'block' });
+            }
+            else if (current > (secondP - 40) && current <= secondP + 100) {
+                $('#furtherInfo').css({ display: 'block' });
+
+            }
+            else {
+                $('#furtherInfo').css({ display: 'none' });
+            }
+        }
+    });
+
+    $('#furtherInfo').click(function () {
+        var current = $(document).scrollTop();
+        var firstP = $('#first-Page-20vh').offset().top;
+        var secondP = $('#second-Page').offset().top;
+
+        if (current <= (firstP + 10)) {
+            $("html, body").animate({ scrollTop: secondP + 100 }, 1000);
+            $("html, body").animate({ scrollTop: secondP - 60 }, 500);
+            $("html, body").animate({ scrollTop: secondP + 20 }, 400);
+            $("html, body").animate({ scrollTop: secondP }, 300);
+        }
+        else if (current > (secondP - 40) && current <= secondP + 100) {
+            $("html, body").animate({ scrollTop: $('#third-Page').offset().top + 100 }, 500);
+        }
+    });</script>

@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "AboutMe";
+}
+<div class="text-center pt-20vh" id="first-Page-20vh">
+    <div class="container">
+        <div class="pb-5" style="background-image:url(/images/profile.png);background-repeat: no-repeat;background-size: cover;height: 300px;width: 300px;border-radius: 150px;margin: auto;"></div>
+        <div class="pt-5">
+            <h1 class="text-white">Shawn Chen</h1>
+            <p class="pt-4 w-75 m-auto">I am an international student who is in the final year of Bachelor of Information technology, balabalabalabal introduction about my self</p>
+        </div>
+        <div class="text-center border-div-trigger w-200px m-auto pt-2">
+            <a class="text-decoration-none" href="https://localhost:5001/Home/Contact">Contact with me now</a>
+            <div class="border-div"></div>
+        </div>
+    </div>
+</div>
+<div class="text-center" id="second-Page">
+    <div class="container vertical-middle pt-v-sm-20vh">
+        <h1 class="text-white pb-3">Achievements</h1>
+        <div class="row row-cols-1 row-cols-md-1 pt-5">
+            <div class="card bg-none border-0">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="/images/top-student.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Year two Top Student</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <div class="text-center border-div-trigger w-220px m-auto">
+                                <a class="text-decoration-none" href="~/images/null.png">See my Award certificate</a>
+                                <div class="border-div"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<span class="material-icons" id="Top">
+    arrow_upward
+</span>
+<span class="material-icons" id="furtherInfo">
+    arrow_downward
+</span>
+<script>$(window).scroll(function () {
+        var current = $(document).scrollTop();
+        var firstP = $('#first-Page-20vh').offset().top;
+
+        if (!ToDisableNavigationArrows()) {
+            if (current <= (firstP + 10)) {
+                $('#furtherInfo').css({ display: 'block' });
+            }
+            else {
+                $('#furtherInfo').css({ display: 'none' });
+            }
+        }
+    });
+    $('#furtherInfo').click(function () {
+        var current = $(document).scrollTop();
+        var firstP = $('#first-Page-20vh').offset().top;
+
+        if (current > (firstP - 40) && current <= firstP + 100) {
+            $("html, body").animate({ scrollTop: $('#second-Page').offset().top + 100 }, 1000);
+        }
+    });</script>

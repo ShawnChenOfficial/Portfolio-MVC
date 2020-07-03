@@ -1,0 +1,399 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+html{
+    min-width:320px;
+}
+
+/*addtion*/
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
+/*padding top percentage*/
+.pt-40vh {
+    padding-top: 40vh;
+}
+.pt-20vh {
+    padding-top: 20vh;
+}
+
+.pt-v-sm-20vh {
+    padding-top: 0;
+}
+@media(max-width:767px){
+
+    .pt-v-sm-20vh {
+        padding-top: 20vh;
+    }
+}
+@media(max-height:767px) {
+
+    .pt-v-sm-20vh {
+        padding-top: 20vh;
+    }
+}
+
+/*font size*/
+.font-88px {
+    font-size: 88px !important;
+}
+/*text-colors*/
+.text-wheat {
+    color: wheat;
+}
+/*width*/
+.w-80px {
+    width: 80px !important;
+}
+.w-200px {
+    width: 200px !important;
+}
+.w-220px {
+    width: 220px !important;
+}
+/*hint box*/
+#hintBox {
+    background-color: rgba(0,0,0,0.9);
+    position: fixed;
+    z-index: 1200;
+    bottom: 0;
+    display:flex;
+    opacity:1;
+    border-radius:10px;
+    animation: hintBoxFadeIn 1.5s linear;
+}
+
+@keyframes hintBoxFadeIn{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+#hintBox p{
+    width:80%;
+}
+/*nav*/
+nav {
+    z-index: 1000;
+}
+
+.nav-ul-absolute {
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.bg-black {
+    background-color: #000000 !important;
+}
+
+.nav-border-bottom {
+    border-bottom: 1px solid #3b3d40 !important;
+}
+
+.navbar-nav {
+    background: #000000 !important;
+}
+
+    .navbar-nav .nav-item {
+        font-size: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+@media(max-width:575px) {
+    .navbar-nav .nav-item {
+        width: 20%;
+        margin: auto;
+        padding-bottom: 2px;
+    }
+
+    .navbar-nav {
+        padding-bottom: 10px;
+    }
+}
+
+.navbar-nav li .border-div-active {
+    border-bottom: 1px solid;
+    width: 80%;
+    margin: auto;
+}
+
+.border-div-trigger:hover, .navbar-nav li:hover {
+    font-size: 1.04rem;
+    animation: fontChange 0.2s linear;
+}
+@keyframes fontChange{
+    0% {
+        font-size: 1.0rem;
+    }
+    50% {
+        font-size: 1.02rem;
+    }
+    100% {
+        font-size: 1.04rem;
+    }
+}
+
+.border-div-trigger:hover .border-div, .navbar-nav li:hover .border-div {
+    border-bottom: 1px solid;
+    width: 80%;
+    margin: auto;
+    animation: ul-anim 0.3s linear;
+}
+
+@keyframes ul-anim {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 40%;
+    }
+
+    100% {
+        width: 80%;
+    }
+}
+/*content*/
+body {
+    background-color: #171819;
+    color: rgba(255,255,255,.5);
+}
+.bg-none {
+    background-color: rgba(0,0,0,0) !important;
+}
+
+#first-Page, #first-Page-20vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
+    height: 100vh;
+    position: relative;
+}
+
+@media(max-width:767px){
+    #first-Page, #first-Page-20vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
+        height: auto;
+        position: relative;
+    }
+}
+@media(max-height:767px) {
+    #first-Page, #first-Page-20vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
+        height: auto;
+        position: relative;
+    }
+}
+/*for most of the pages*/
+#first-Page {
+    animation: fadeIn 0.8s linear;
+    opacity: 1;
+}
+
+    #first-Page .text-huge {
+        font-size: 88px;
+    }
+
+@keyframes fadeIn {
+    0% {
+        padding-top: 42vh;
+        opacity: 0;
+    }
+
+    50% {
+        padding-top: 41vh;
+        opacity: 0.5;
+    }
+
+    100% {
+        padding-top: 40vh;
+        opacity: 1;
+    }
+}
+/*time line*/
+.timeline {
+    list-style-type: none;
+    position: relative;
+}
+
+ul.timeline:before {
+    content: ' ';
+    background: #262729;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 400;
+}
+
+ul.timeline > li {
+    margin-left: 3.4rem;
+}
+
+    ul.timeline > li h5 {
+        color: white;
+    }
+
+
+#first-Page-20vh {
+    padding-top: 20vh;
+    animation: fadeIn-20vh 0.8s linear;
+    opacity: 1;
+}
+
+#first-Page .text-huge {
+    font-size: 88px;
+}
+
+@keyframes fadeIn-20vh {
+    0% {
+        padding-top: 22vh;
+        opacity: 0;
+    }
+
+    50% {
+        padding-top: 21vh;
+        opacity: 0.5;
+    }
+
+    100% {
+        padding-top: 20vh;
+        opacity: 1;
+    }
+}
+
+#contact-form {
+    padding-top: 15vh;
+    padding-bottom: 20vh;
+    animation: fadeIn2 0.8s linear;
+    opacity: 1;
+}
+
+@keyframes fadeIn2 {
+    0% {
+        padding-top: 17vh;
+        opacity: 0;
+    }
+
+    50% {
+        padding-top: 16vh;
+        opacity: 0.5;
+    }
+
+    100% {
+        padding-top: 15vh;
+        opacity: 1;
+    }
+}
+
+
+/*vertical alignment*/
+.vertical-middle {
+    position: relative;
+    top: 50%;
+    transform: translate(0,-50%);
+}
+
+@media (max-width:767px){
+
+    .vertical-middle {
+        position: relative;
+        top: 0;
+        transform: translate(0,0);
+    }
+}
+
+@media (max-height:767px) {
+
+    .vertical-middle {
+        position: relative;
+        top: 0;
+        transform: translate(0,0);
+    }
+}
+/*  down arrow button  */
+#furtherInfo {
+    cursor: pointer;
+    color: white !important;
+    font-size: 40px;
+    position: fixed;
+    bottom: 15px;
+    left: 48.5%;
+    animation: next 1s linear infinite;
+}
+
+@keyframes next {
+    0% {
+        bottom: 15px;
+    }
+
+    25% {
+        bottom: 5px;
+    }
+
+    40% {
+        bottom: 8px;
+    }
+
+    60% {
+        bottom: 11px;
+    }
+
+    80% {
+        bottom: 14px;
+    }
+
+    100% {
+        bottom: 15px;
+    }
+}
+/*  up arrow button  */
+#Top {
+    margin-top: -55px;
+    margin-left: 48.5%;
+    cursor: pointer;
+    color: white !important;
+    font-size: 40px;
+    transform: translateY(-15px);
+    animation: next 1s linear infinite;
+}
+
+@keyframes next {
+    0% {
+        transform: translateY(-15px);
+    }
+
+    25% {
+        transform: translateY(-14px);
+    }
+
+    40% {
+        transform: translateY(-11px);
+    }
+
+    60% {
+        transform: translateY(-8px);
+    }
+
+    80% {
+        transform: translateY(-5px);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}

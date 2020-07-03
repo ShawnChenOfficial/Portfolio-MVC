@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+@model Portfolio.Model.Message
+
+<div id="contact-form">
+    <div class="text-center pb-5">
+        <h1 class="text-white">Send me an email</h1>
+    </div>
+    <form class="container">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.FirstName"></label>
+                <input class="form-control" asp-for="@Model.FirstName">
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.LastName"></label>
+                <input class="form-control" asp-for="@Model.LastName">
+            </div>
+            <div class="form-group col-md-4">
+                <label asp-for="@Model.Gender"></label>
+                <select class="form-control" asp-for="@Model.Gender">
+                    <option value="#">Select your gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="@Model.Email"></label>
+                <input class="form-control" asp-for="@Model.Email">
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="@Model.Mobile"></label>
+                <input class="form-control" asp-for="@Model.Mobile">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label asp-for="@Model.Company"></label>
+                <input class="form-control" asp-for="@Model.Company">
+            </div>
+            <div class="form-group col-md-6">
+                <label asp-for="@Model.CompanyRegion"></label>
+                <input class="form-control" asp-for="@Model.CompanyRegion">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label asp-for="@Model.CompanyLocation"></label>
+                <input class="form-control" asp-for="@Model.CompanyLocation">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label asp-for="@Model.ExtraComment"></label>
+                <textarea class="form-control" asp-for="@Model.ExtraComment" rows="3"></textarea>
+            </div>
+        </div>
+        <div class="text-right">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+<div class="text-center" id="second-Page">
+    <div class="container vertical-middle pt-v-sm-20vh">
+        <h1 class="pb-5 text-white">Either contact with me through</h1>
+        <div class="row">
+            <div class="col-sm-10 offset-sm-1 offset-md-0 col-md-4 mb-4">
+                <div class="card bg-none">
+                    <span class="material-icons card-img-top pt-4 font-88px text-wheat">email</span>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Email</h5>
+                        <p class="card-text">shawnchenofficial@gmail.com<br />349840285@qq.com<br />2017003399@student.sit.ac.nz</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-10 offset-sm-1 offset-md-0 col-md-4 mb-4">
+                <div class="card bg-none">
+                    <span class="material-icons card-img-top pt-4 font-88px text-wheat">call</span>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Mobile</h5>
+                        <p class="card-text">+64 022 475 6845</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-10 offset-sm-1 offset-md-0 col-md-4 mb-4">
+                <div class="card bg-none">
+                    <span class="material-icons card-img-top pt-4 font-88px text-wheat">location_city</span>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Location</h5>
+                        <p class="card-text">71 Macmaster Street, Richmond, Invercargill, New Zealand</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<span class="material-icons" id="Top">
+    arrow_upward
+</span>
+<span class="material-icons" id="furtherInfo">
+    arrow_downward
+</span>
+<script>$(window).scroll(function () {
+        var current = $(document).scrollTop();
+        var firstP = $('#contact-form').offset().top;
+
+        if (!ToDisableNavigationArrows()) {
+            if (current <= (firstP + 10)) {
+                $('#furtherInfo').css({ display: 'block' });
+            }
+            else {
+                $('#furtherInfo').css({ display: 'none' });
+            }
+        }
+    });
+    $('#furtherInfo').click(function () {
+        var current = $(document).scrollTop();
+        var firstP = $('#contact-form').offset().top;
+        var secondP = $('#second-Page').offset().top;
+        if (current <= (firstP + 10)) {
+            $("html, body").animate({ scrollTop: secondP + 100 }, 1000);
+        }
+    });</script>

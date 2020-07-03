@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Portfolio</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black box-shadow">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Shawn Chen</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-grow-1 nav-ul-absolute justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-center text-light" id="Index" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <div class="border-div"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center text-light" id="AboutMe" asp-area="" asp-controller="Home" asp-action="AboutMe">About Me</a>
+                        <div class="border-div"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center text-light" id="Resume" asp-area="" asp-controller="Home" asp-action="Resume">Resume</a>
+                        <div class="border-div"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center text-light" id="Portfolio" asp-area="" asp-controller="Home" asp-action="Portfolio">Portfolio</a>
+                        <div class="border-div"></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-center text-light" id="Contact" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                        <div class="border-div"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="myProtfilio" class="container-fluid p-0">
+        <main role="main">
+            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/vue/vue-v2.6.11.js"></script>
+    <script src="~/lib/vue/axios-v0.19.2.js"></script>
+    @RenderSection("Scripts", required: false)
+    <script src="~/js/site.js"></script>
+    <script src="~/js/vue-layout.js"></script>
+    <script>
+        $(window).on('load', function () {
+
+            $('.navbar-nav ul li div').removeClass('border-div-active').addClass('border-div');
+
+            $('#@ViewContext.RouteData.Values["action"].ToString()').parent().find('div').addClass('border-div-active').removeClass('border-div');
+        })
+    </script>
+</body>
+</html>
