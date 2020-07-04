@@ -1,31 +1,31 @@
 ﻿@{
     ViewData["Title"] = "Resume";
 }
-<div class="text-center pt-20vh" id="first-Page-20vh">
+<div class="text-center pt-15vh" id="first-Page-15vh">
     <div class="container">
         <h1 class="text-white mb-5">Education</h1>
         <div class="row">
-            <ul class="timeline mt-5 col-lg-6 col-md-8 col-10 m-auto text-left">
+            <ul class="timeline mt-5 col-lg-8 col-md-10 col-12 m-auto text-left">
                 <li>
-                    <h5>Bachelor of Information Technology</h5>
-                    <a target="_blank" href="https://www.sit.ac.nz/"><sup>Southern Institute of Technology, Invercargill, New Zealand</sup></a>
+                    <h5>Deploma of Numerical Control Technology</h5>
+                    <a target="_blank" href="https://eweb.hebut.edu.cn/"><sup>Hebei University of Technology, Tianjin, China</sup></a>
                     <br />
-                    <sup>Feb, 2018 ~ Dec, 2020</sup>
-                    <p>Description</p>
+                    <sup>Mar, 2010 ~ July, 2012</sup>
+                    <p>Mainly learned CNC (Computer Numerical Control) programming, as well as the knowledge in field of mechanical design in my colledge as this could be helpful for CNC programming.</p>
                 </li>
                 <li>
                     <h5>Worded as a Mechanical Engineer</h5>
                     <a target="_blank" href="http://www.unomin.com/main.php"><sup>UNO International Co.,Ltd, Tianjin, China</sup></a>
                     <br />
-                    <sup>time</sup>
-                    <p>Description</p>
+                    <sup>Feb, 2013 ~ Jan, 2017</sup>
+                    <p>Worked for UNO as a mechanical engineer, mainly in charge of installation, maintenance and repair of their machines within a team. while the last year of working in UNO, i self learned english  as the preparation of studying overseas in next year.</p>
                 </li>
                 <li>
-                    <h5>Institute name</h5>
-                    <a target="_blank" href="https://eweb.hebut.edu.cn/"><sup>Hebei University of Technology, Tianjin, China</sup></a>
+                    <h5>Bachelor of Information Technology</h5>
+                    <a target="_blank" href="https://www.sit.ac.nz/"><sup>Southern Institute of Technology, Invercargill, New Zealand</sup></a>
                     <br />
-                    <sup>time</sup>
-                    <p>Description</p>
+                    <sup>Feb, 2018 ~ Dec, 2020</sup>
+                    <p>Currently i'm in the final year of Bachelor of Information Technology. I heavily learn the programming aspect of IT, especially, the Web application development and Cloud deployment. I was rated as the Year 2 Top Student, and appointed as the peer tutor of 2 students.</p>
                 </li>
             </ul>
         </div>
@@ -33,10 +33,10 @@
 </div>
 <div class="text-center" id="second-Page">
     <div class="container vertical-middle pt-v-sm-20vh">
-        <h1 class="text-white pb-3">Skills in Web App Development</h1>
-        <div class="row">
-            <ul class="timeline mt-5 col-lg-6 col-md-8 col-10  m-auto text-left">
-                <li class="mt-5">
+        <h1 class="text-white pb-3">Skills in IT</h1>
+        <div class="row mt-5">
+            <ul class="timeline col-lg-4 col-md-6 col-8 m-auto text-left">
+                <li>
                     <h5 class="pb-2">Programming Languages</h5>
                     <ul>
                         <li>C#, Java</li>
@@ -72,12 +72,36 @@
 </div>
 <div class="text-center" id="third-Page">
     <div class="container vertical-middle pt-v-sm-20vh">
+        <h1 class="text-white pb-3">Achievements</h1>
+        <div class="row row-cols-1 row-cols-md-1 pt-5">
+            <div class="card bg-none border-0">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="/images/top_student_thumb.png" class="card-img vertical-middle" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title text-white">Top Student Award</h5>
+                            <p class="card-text">Due to my hard working during these years, i was awarded as the Year 2 Bachelor of Information Technology Top Student in 2019.</p>
+                            <div class="text-center border-div-trigger w-220px m-auto">
+                                <a class="text-decoration-none" href="~/images/null.png">See my Award certificate</a>
+                                <div class="border-div"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center" id="forth-Page">
+    <div class="container vertical-middle pt-v-sm-20vh">
         <div class="pt-5">
             <div class="card mb-5 pb-5 bg-none m-auto border-0">
                 <span class="material-icons card-img-top pt-4 font-88px text-wheat">library_books</span>
                 <div class="card-body">
                     <h5 class="card-title text-white">Transcript while studying at SIT</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <p class="card-text">As i am currently in the final year study at SIT, my transcript is incomplete. However, working as much as i can, makes me obtained greatful result and the calculated GPA is 8.4 so far. (based on <a target="_blank" href="https://www.otago.ac.nz/study/enrolment/otago014344.html">Otago GPA calculator</a>)</p>
                     <div class="text-center border-div-trigger m-auto" style="width:330px">
                         <a target="_blank" class="text-decoration-none" href="~/images/transcript.png">See Shawn's transcript in full version</a>
                         <div class="border-div"></div>
@@ -95,14 +119,19 @@
 </span>
 <script>$(window).scroll(function () {
         var current = $(document).scrollTop();
-        var firstP = $('#first-Page-20vh').offset().top;
+        var firstP = $('#first-Page-15vh').offset().top;
         var secondP = $('#second-Page').offset().top;
+        var thirdP = $('#third-Page').offset().top;
 
         if (!ToDisableNavigationArrows()) {
             if (current <= (firstP + 10)) {
                 $('#furtherInfo').css({ display: 'block' });
             }
             else if (current > (secondP - 40) && current <= secondP + 100) {
+                $('#furtherInfo').css({ display: 'block' });
+
+            }
+            else if (current > (thirdP - 40) && current <= thirdP + 100) {
                 $('#furtherInfo').css({ display: 'block' });
 
             }
@@ -114,8 +143,9 @@
 
     $('#furtherInfo').click(function () {
         var current = $(document).scrollTop();
-        var firstP = $('#first-Page-20vh').offset().top;
+        var firstP = $('#first-Page-15vh').offset().top;
         var secondP = $('#second-Page').offset().top;
+        var thirdP = $('#third-Page').offset().top;
 
         if (current <= (firstP + 10)) {
             $("html, body").animate({ scrollTop: secondP + 100 }, 1000);
@@ -124,6 +154,12 @@
             $("html, body").animate({ scrollTop: secondP }, 300);
         }
         else if (current > (secondP - 40) && current <= secondP + 100) {
-            $("html, body").animate({ scrollTop: $('#third-Page').offset().top + 100 }, 500);
+            $("html, body").animate({ scrollTop: thirdP + 100 }, 1000);
+            $("html, body").animate({ scrollTop: thirdP - 60 }, 500);
+            $("html, body").animate({ scrollTop: thirdP + 20 }, 400);
+            $("html, body").animate({ scrollTop: thirdP }, 300);
+        }
+        else if (current > (thirdP - 40) && current <= thirdP + 100) {
+            $("html, body").animate({ scrollTop: $('#forth-Page').offset().top + 100 }, 500);
         }
     });</script>

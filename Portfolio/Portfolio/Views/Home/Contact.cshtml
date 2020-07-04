@@ -1,28 +1,30 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
-@model Portfolio.Model.Message
-
+@model Portfolio.Models.Message
+<div class="toast-notification pl-1 pr-1 text-white text-center"><h6 class="pt-3"></h6><p></p></div>
 <div id="contact-form">
     <div class="text-center pb-5">
         <h1 class="text-white">Send me an email</h1>
     </div>
-    <form class="container">
+    <form id="form-body" class="container">
         <div class="form-row">
             <div class="form-group col-md-4">
                 <label asp-for="@Model.FirstName"></label>
                 <input class="form-control" asp-for="@Model.FirstName">
+                <span asp-validation-for="@Model.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="@Model.LastName"></label>
                 <input class="form-control" asp-for="@Model.LastName">
+                <span asp-validation-for="@Model.LastName" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="@Model.Gender"></label>
                 <select class="form-control" asp-for="@Model.Gender">
-                    <option value="#">Select your gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Miss.">Miss.</option>
                 </select>
             </div>
         </div>
@@ -30,26 +32,31 @@
             <div class="form-group col-md-6">
                 <label asp-for="@Model.Email"></label>
                 <input class="form-control" asp-for="@Model.Email">
+                <span asp-validation-for="@Model.Email" class="text-danger"></span>
             </div>
             <div class="form-group col-md-6">
                 <label asp-for="@Model.Mobile"></label>
                 <input class="form-control" asp-for="@Model.Mobile">
+                <span asp-validation-for="@Model.Mobile" class="text-danger"></span>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label asp-for="@Model.Company"></label>
                 <input class="form-control" asp-for="@Model.Company">
+                <span asp-validation-for="@Model.Company" class="text-danger"></span>
             </div>
             <div class="form-group col-md-6">
                 <label asp-for="@Model.CompanyRegion"></label>
                 <input class="form-control" asp-for="@Model.CompanyRegion">
+                <span asp-validation-for="@Model.CompanyRegion" class="text-danger"></span>
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label asp-for="@Model.CompanyLocation"></label>
                 <input class="form-control" asp-for="@Model.CompanyLocation">
+                <span asp-validation-for="@Model.CompanyLocation" class="text-danger"></span>
             </div>
         </div>
         <div class="form-row">
@@ -59,7 +66,12 @@
             </div>
         </div>
         <div class="text-right">
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button class="g-recaptcha btn btn-primary"
+                    data-sitekey="6Le2Xq0ZAAAAAB_9Vspgd7ZqSpzXl1A1XumaZoBp"
+                    data-callback='onSubmit'
+                    data-action='submit'>
+                Submit
+            </button>
         </div>
     </form>
 </div>
@@ -103,6 +115,7 @@
 <span class="material-icons" id="furtherInfo">
     arrow_downward
 </span>
+<script src="https://www.google.com/recaptcha/api.js"></script>
 <script>$(window).scroll(function () {
         var current = $(document).scrollTop();
         var firstP = $('#contact-form').offset().top;
@@ -123,4 +136,70 @@
         if (current <= (firstP + 10)) {
             $("html, body").animate({ scrollTop: secondP + 100 }, 1000);
         }
-    });</script>
+    });
+    function onSubmit() {
+
+        var form = document.getElementById('form-body');
+        var formData = new FormData(form);
+
+        $.ajax({
+            type: 'POST',
+            url: '../Home/Contact',
+            data: formData,
+            cache: false,
+            processData: false,
+            contentType: false,
+            dataType: 'json',
+            success: function (data) {
+
+                $('.toast-notification h6').html('');
+                $('.toast-notification p').html('');
+
+                if (data.toString() == 'true') {
+                    $('.toast-notification h6').html('Success!');
+                    $('.toast-notification p').html('Thanks for your email.I will get in touch with you as soon as possible.');
+
+                    $('.toast-notification').addClass('toast-notification-show-success');
+
+                    setTimeout(function () {
+                        $('.toast-notification').removeClass('toast-notification-show-success').addClass('toast-notification-hide-success');
+                    }, 2500);
+
+                    setTimeout(function () {
+                        $('.toast-notification').removeClass('toast-notification-hide-success');
+                    }, 1200);
+
+                    setTimeout(function () {
+                        $('.toast-notification h6').html('');
+                        $('.toast-notification p').html('');
+                    }, 1200);
+                }
+                else {
+                    $('.toast-notification h6').html('Ops!');
+                    $('.toast-notification p').html('Email was not successfully sent due to a system error, Please try later or manually send me an email through my email at the bottom of this page.');
+                    $('.toast-notification').addClass('toast-notification-show-failed');
+
+                    setTimeout(function () {
+                        $('.toast-notification').removeClass('toast-notification-show-failed').addClass('toast-notification-hide-failed');
+                    }, 2500);
+
+                    setTimeout(function () {
+                        $('.toast-notification').removeClass('toast-notification-hide-failed');
+                    }, 1200);
+                }
+            },
+            error: function (xhr) {
+                $('.toast-notification h6').html('Ops!');
+                $('.toast-notification p').html('Email was not successfully sent due to a system error, Please try later or manually send me an email through my email at the bottom of this page.');
+                $('.toast-notification').addClass('toast-notification-show-failed');
+
+                setTimeout(function () {
+                    $('.toast-notification').removeClass('toast-notification-show-failed').addClass('toast-notification-hide-failed');
+                }, 2500);
+
+                setTimeout(function () {
+                    $('.toast-notification').removeClass('toast-notification-hide-failed');
+                }, 1200);
+            }
+        });
+    }</script>

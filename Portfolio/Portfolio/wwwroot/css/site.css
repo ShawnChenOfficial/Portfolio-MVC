@@ -1,8 +1,8 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-html{
-    min-width:320px;
+html {
+    min-width: 320px;
 }
 
 /*addtion*/
@@ -14,19 +14,26 @@ html{
 .pt-40vh {
     padding-top: 40vh;
 }
+
 .pt-20vh {
     padding-top: 20vh;
+}
+
+.pt-15vh {
+    padding-top: 15vh;
 }
 
 .pt-v-sm-20vh {
     padding-top: 0;
 }
-@media(max-width:767px){
+
+@media(max-width:767px) {
 
     .pt-v-sm-20vh {
         padding-top: 20vh;
     }
 }
+
 @media(max-height:767px) {
 
     .pt-v-sm-20vh {
@@ -46,9 +53,15 @@ html{
 .w-80px {
     width: 80px !important;
 }
+
+.w-120px {
+    width: 120px !important;
+}
+
 .w-200px {
     width: 200px !important;
 }
+
 .w-220px {
     width: 220px !important;
 }
@@ -58,22 +71,24 @@ html{
     position: fixed;
     z-index: 1200;
     bottom: 0;
-    display:flex;
-    opacity:1;
-    border-radius:10px;
+    display: flex;
+    opacity: 1;
+    border-radius: 10px;
     animation: hintBoxFadeIn 1.5s linear;
 }
 
-@keyframes hintBoxFadeIn{
-    0%{
-        opacity:0;
+@keyframes hintBoxFadeIn {
+    0% {
+        opacity: 0;
     }
-    100%{
-        opacity:1;
+
+    100% {
+        opacity: 1;
     }
 }
-#hintBox p{
-    width:80%;
+
+#hintBox p {
+    width: 80%;
 }
 /*nav*/
 nav {
@@ -126,13 +141,16 @@ nav {
     font-size: 1.04rem;
     animation: fontChange 0.2s linear;
 }
-@keyframes fontChange{
+
+@keyframes fontChange {
     0% {
         font-size: 1.0rem;
     }
+
     50% {
         font-size: 1.02rem;
     }
+
     100% {
         font-size: 1.04rem;
     }
@@ -163,23 +181,25 @@ body {
     background-color: #171819;
     color: rgba(255,255,255,.5);
 }
+
 .bg-none {
     background-color: rgba(0,0,0,0) !important;
 }
 
-#first-Page, #first-Page-20vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
+#first-Page, #first-Page-10vh, #first-Page-15vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
     height: 100vh;
     position: relative;
 }
 
-@media(max-width:767px){
-    #first-Page, #first-Page-20vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
+@media(max-width:767px) {
+    #first-Page, #first-Page-20vh, #first-Page-15vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
         height: auto;
         position: relative;
     }
 }
+
 @media(max-height:767px) {
-    #first-Page, #first-Page-20vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
+    #first-Page, #first-Page-20vh, #first-Page-15vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
         height: auto;
         position: relative;
     }
@@ -249,14 +269,38 @@ ul.timeline > li {
     }
 
 
+
+#first-Page .text-huge {
+    font-size: 88px;
+}
+
+#first-Page-15vh {
+    padding-top: 15vh;
+    animation: fadeIn-15vh 0.8s linear;
+    opacity: 1;
+}
+
+@keyframes fadeIn-15vh {
+    0% {
+        padding-top: 17vh;
+        opacity: 0;
+    }
+
+    50% {
+        padding-top: 16vh;
+        opacity: 0.5;
+    }
+
+    100% {
+        padding-top: 15vh;
+        opacity: 1;
+    }
+}
+
 #first-Page-20vh {
     padding-top: 20vh;
     animation: fadeIn-20vh 0.8s linear;
     opacity: 1;
-}
-
-#first-Page .text-huge {
-    font-size: 88px;
 }
 
 @keyframes fadeIn-20vh {
@@ -308,7 +352,7 @@ ul.timeline > li {
     transform: translate(0,-50%);
 }
 
-@media (max-width:767px){
+@media (max-width:767px) {
 
     .vertical-middle {
         position: relative;
@@ -395,5 +439,104 @@ ul.timeline > li {
 
     100% {
         transform: translateY(-15px);
+    }
+}
+
+/*toast notification*/
+.toast-notification {
+    z-index: 1000;
+    position: fixed;
+    top: -100px;
+    margin-left: 20%;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.toast-notification-show-success {
+    top: 55px;
+    background: cadetblue;
+    animation: show-notification-success 1s linear;
+}
+
+@keyframes show-notification-success {
+    0% {
+        top: -100px;
+        background: cadetblue;
+    }
+
+    50% {
+        top: -20px;
+        background: cadetblue;
+    }
+
+    100% {
+        top: 60px;
+        background: cadetblue;
+    }
+}
+
+.toast-notification-hide-success {
+    top: -100px;
+    animation: hide-notification-success 1s linear;
+}
+
+@keyframes hide-notification-success {
+    0% {
+        top: 60px;
+        background: cadetblue;
+    }
+
+    50% {
+        top: -20px;
+        background: cadetblue;
+    }
+
+    100% {
+        top: -100px;
+        background: none;
+    }
+}
+.toast-notification-show-failed {
+    top: 55px;
+    background: #9c0909;
+    animation: show-notification-failed 1s linear;
+}
+
+@keyframes show-notification-failed {
+    0% {
+        top: -100px;
+        background: #9c0909;
+    }
+
+    50% {
+        top: -20px;
+        background: #9c0909;
+    }
+
+    100% {
+        top: 60px;
+        background: #9c0909;
+    }
+}
+
+.toast-notification-hide-failed {
+    top: -100px;
+    animation: hide-notification-failed 1s linear;
+}
+
+@keyframes hide-notification-failed {
+    0% {
+        top: 60px;
+        background: #9c0909;
+    }
+
+    50% {
+        top: -20px;
+        background: #9c0909;
+    }
+
+    100% {
+        top: -100px;
+        background: none;
     }
 }

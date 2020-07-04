@@ -1,36 +1,60 @@
 ﻿@{
-    ViewData["Title"] = "AboutMe";
+    ViewData["Title"] = "Home Page";
 }
 <div class="text-center pt-20vh" id="first-Page-20vh">
     <div class="container">
-        <div class="pb-5" style="background-image:url(/images/profile.png);background-repeat: no-repeat;background-size: cover;height: 300px;width: 300px;border-radius: 150px;margin: auto;"></div>
-        <div class="pt-5">
-            <h1 class="text-white">Shawn Chen</h1>
-            <p class="pt-4 w-75 m-auto">I am an international student who is in the final year of Bachelor of Information technology, balabalabalabal introduction about my self</p>
-        </div>
+        <div class="pb-5" style="background-image:url(/images/profile_thumb.png);background-repeat: no-repeat;background-size: cover;height: 300px;width: 300px;border-radius: 150px;margin: auto;"></div>
+        <h1 class="text-white text-huge pt-4">Shawn Chen</h1>
+        <p class="pt-3 w-75 m-auto">
+            Who is in the final year of the Bachelor of Information Technology at the Southern Institute of Technology in Invercargill campus. I am a programmer who loves programming and keeps <strong class="text-white">researching</strong> and <strong class="text-white">learning</strong> new skills related in IT, as I would like to be a full-stack in future.
+        </p>
         <div class="text-center border-div-trigger w-200px m-auto pt-2">
-            <a class="text-decoration-none" href="https://localhost:5001/Home/Contact">Contact with me now</a>
+            <a class="text-decoration-none" asp-controller="Home" asp-action="Contact">Contact with me now</a>
             <div class="border-div"></div>
         </div>
     </div>
 </div>
 <div class="text-center" id="second-Page">
     <div class="container vertical-middle pt-v-sm-20vh">
-        <h1 class="text-white pb-3">Achievements</h1>
-        <div class="row row-cols-1 row-cols-md-1 pt-5">
-            <div class="card bg-none border-0">
-                <div class="row no-gutters">
-                    <div class="col-md-4">
-                        <img src="/images/top-student.jpg" class="card-img" alt="...">
+        <h3>I am good at</h3>
+        <h1 class="text-white">Web application development</h1>
+        <p class="pt-4 w-75 m-auto">
+            I am familiar with popupar programming languages in both
+            <strong class="text-white">front-end</strong> and
+            <strong class="text-white">back-end</strong>
+            to support creating web applications.
+            Also, i would like to 
+            <strong class="text-white">learn</strong>
+            new techniques that could be useful and helpful for web application development.
+        </p>
+    </div>
+</div>
+<div class="text-center" id="third-Page">
+    <div class="container vertical-middle pt-v-sm-20vh">
+        <h1 class="pb-5 text-white">More About Me</h1>
+        <div class="row pt-5">
+            <div class="col-sm-8 offset-sm-2 offset-md-1 col-md-4 mb-4">
+                <div class="card bg-none">
+                    <span class="material-icons card-img-top pt-4 font-88px text-wheat">description</span>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Resume</h5>
+                        <p class="card-text">To get general ideas of my education background, my skills learnt so far, acheivements and so on...</p>
+                        <div class="text-center border-div-trigger w-80px m-auto">
+                            <a class="text-decoration-none" asp-action="Resume" asp-controller="Home">See more</a>
+                            <div class="border-div"></div>
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title text-white">Year two Top Student</h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <div class="text-center border-div-trigger w-220px m-auto">
-                                <a class="text-decoration-none" href="~/images/null.png">See my Award certificate</a>
-                                <div class="border-div"></div>
-                            </div>
+                </div>
+            </div>
+            <div class="col-sm-8 offset-sm-2 offset-md-2 col-md-4 mb-4">
+                <div class="card bg-none">
+                    <span class="material-icons card-img-top pt-4 font-88px text-wheat">file_copy</span>
+                    <div class="card-body">
+                        <h5 class="card-title text-white">Projects</h5>
+                        <p class="card-text">To understand where my skills at via projects i have done, by diagrams, source codes or a link to a live system.</p>
+                        <div class="text-center border-div-trigger w-80px m-auto">
+                            <a class="text-decoration-none" asp-action="Projects" asp-controller="Home">See more</a>
+                            <div class="border-div"></div>
                         </div>
                     </div>
                 </div>
@@ -44,24 +68,46 @@
 <span class="material-icons" id="furtherInfo">
     arrow_downward
 </span>
-<script>$(window).scroll(function () {
+<div id="hintBox" class="container-fluid pt-3 pb-3">
+    <p class="text-left m-auto">This website has been open sourced on Github, and the use rights are owned by the author only (Shawn Chen). The purpose of the website is only for showing the personal skills, not for commercial use. If necessary, please contact me in time.</p>
+    <button id="understand" class="btn btn-primary m-auto">Understood</button>
+</div>
+<script>
+    $('#understand').on('click', function () {
+        $('#hintBox').css('display', 'none');
+    });
+
+    $(window).scroll(function () {
         var current = $(document).scrollTop();
         var firstP = $('#first-Page-20vh').offset().top;
+        var secondP = $('#second-Page').offset().top;
 
         if (!ToDisableNavigationArrows()) {
             if (current <= (firstP + 10)) {
                 $('#furtherInfo').css({ display: 'block' });
+            }
+            else if (current > (secondP - 40) && current <= secondP + 100) {
+                $('#furtherInfo').css({ display: 'block' });
+
             }
             else {
                 $('#furtherInfo').css({ display: 'none' });
             }
         }
     });
+
     $('#furtherInfo').click(function () {
         var current = $(document).scrollTop();
         var firstP = $('#first-Page-20vh').offset().top;
+        var secondP = $('#second-Page').offset().top;
 
-        if (current > (firstP - 40) && current <= firstP + 100) {
-            $("html, body").animate({ scrollTop: $('#second-Page').offset().top + 100 }, 1000);
+        if (current <= (firstP + 10)) {
+            $("html, body").animate({ scrollTop: secondP + 100 }, 1000);
+            $("html, body").animate({ scrollTop: secondP - 60 }, 500);
+            $("html, body").animate({ scrollTop: secondP + 20 }, 400);
+            $("html, body").animate({ scrollTop: secondP }, 300);
+        }
+        else if (current > (secondP - 40) && current <= secondP + 100) {
+            $("html, body").animate({ scrollTop: $('#third-Page').offset().top + 100 }, 500);
         }
     });</script>

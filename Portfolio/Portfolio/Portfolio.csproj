@@ -9,6 +9,9 @@
   <ItemGroup>
     <Folder Include="wwwroot\icons\" />
     <Folder Include="wwwroot\images\" />
-    <Folder Include="Model\" />
+    <Folder Include="MaillingLib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 </Project>
