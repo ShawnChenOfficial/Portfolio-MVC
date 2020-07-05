@@ -17,18 +17,6 @@ namespace Portfolio.Models
         [DataType(DataType.Text)]
         [Display(Name = "Gender:")]
         public string Gender { get; set; }
-        [Required(ErrorMessage = "Please enter your company/organization name.")]
-        [DataType(DataType.Text)]
-        [Display(Name = "Company Name:")]
-        public string Company { get; set; }
-        [Required(ErrorMessage = "Please enter the region of your company/orgnization.")]
-        [DataType(DataType.Text)]
-        [Display(Name = "Company Region:")]
-        public string CompanyRegion { get; set; }
-        [Required(ErrorMessage = "Please enter location of your company/organization.")]
-        [DataType(DataType.Text)]
-        [Display(Name = "Company Location:")]
-        public string CompanyLocation { get; set; }
         [Required(ErrorMessage = "Please enter your email.")]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Your Email Address:")]

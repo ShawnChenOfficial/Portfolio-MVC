@@ -1,12 +1,12 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "About Me";
 }
 <div class="text-center pt-20vh" id="first-Page-20vh">
     <div class="container">
         <div class="pb-5" style="background-image:url(/images/profile_thumb.png);background-repeat: no-repeat;background-size: cover;height: 300px;width: 300px;border-radius: 150px;margin: auto;"></div>
         <h1 class="text-white text-huge pt-4">Shawn Chen</h1>
         <p class="pt-3 w-75 m-auto">
-            Who is in the final year of the Bachelor of Information Technology at the Southern Institute of Technology in Invercargill campus. I am a programmer who loves programming and keeps <strong class="text-white">researching</strong> and <strong class="text-white">learning</strong> new skills related in IT, as I would like to be a full-stack in future.
+            I'm in the final year of Bachelor of Information Technology at the Southern Institute of Technology in Invercargill campus. I am a programmer who loves programming and keeps <strong class="text-white">research</strong> and <strong class="text-white">learning</strong> new skills related in IT, and I would like to be a full-stack in future.
         </p>
         <div class="text-center border-div-trigger w-200px m-auto pt-2">
             <a class="text-decoration-none" asp-controller="Home" asp-action="Contact">Contact with me now</a>
@@ -17,15 +17,15 @@
 <div class="text-center" id="second-Page">
     <div class="container vertical-middle pt-v-sm-20vh">
         <h3>I am good at</h3>
-        <h1 class="text-white">Web application development</h1>
+        <h1 class="text-white">Web application development.</h1>
         <p class="pt-4 w-75 m-auto">
-            I am familiar with popupar programming languages in both
+            I'm familiar with popular programming languages in both
             <strong class="text-white">front-end</strong> and
             <strong class="text-white">back-end</strong>
             to support creating web applications.
-            Also, i would like to 
+            Also, I would like to 
             <strong class="text-white">learn</strong>
-            new techniques that could be useful and helpful for web application development.
+            new techniques which could be useful and helpful for web application development.
         </p>
     </div>
 </div>
@@ -38,7 +38,7 @@
                     <span class="material-icons card-img-top pt-4 font-88px text-wheat">description</span>
                     <div class="card-body">
                         <h5 class="card-title text-white">Resume</h5>
-                        <p class="card-text">To get general ideas of my education background, my skills learnt so far, acheivements and so on...</p>
+                        <p class="card-text">To get general idea of my education background, my skills learnt so far, acheivements and so on...</p>
                         <div class="text-center border-div-trigger w-80px m-auto">
                             <a class="text-decoration-none" asp-action="Resume" asp-controller="Home">See more</a>
                             <div class="border-div"></div>
@@ -51,7 +51,7 @@
                     <span class="material-icons card-img-top pt-4 font-88px text-wheat">file_copy</span>
                     <div class="card-body">
                         <h5 class="card-title text-white">Projects</h5>
-                        <p class="card-text">To understand where my skills at via projects i have done, by diagrams, source codes or a link to a live system.</p>
+                        <p class="card-text">To understand the level of my skills by diagrams, source codes or a link to a live system.</p>
                         <div class="text-center border-div-trigger w-80px m-auto">
                             <a class="text-decoration-none" asp-action="Projects" asp-controller="Home">See more</a>
                             <div class="border-div"></div>
@@ -73,6 +73,7 @@
     <button id="understand" class="btn btn-primary m-auto">Understood</button>
 </div>
 <script>
+
     $('#understand').on('click', function () {
         $('#hintBox').css('display', 'none');
     });

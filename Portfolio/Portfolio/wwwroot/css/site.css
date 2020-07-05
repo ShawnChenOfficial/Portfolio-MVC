@@ -9,6 +9,70 @@ html {
 .text-decoration-none {
     text-decoration: none !important;
 }
+/*fixed views bar*/
+#views {
+    z-index:1600;
+    padding: 10px;
+    border-radius: 10px 0px 0 10px;
+    display: inline-flex;
+    position: fixed;
+    top: 80px;
+    right: -10px;
+    background-color: #080808;
+    overflow:hidden;
+}
+
+    #views h5, #views p {
+        line-height: 40px;
+    }
+
+.views-num-top {
+    position:absolute;
+    top:-40px;
+}
+.views-num-bottom {
+    position: absolute;
+    top:0px;
+}
+.views-num-extender {
+    position: relative;
+    top:300px;
+    z-index:-1000;
+}
+
+.views-top-to-bottom {
+    transform: translate(0,0);
+    animation: top-to-bottom 1s linear;
+}
+@keyframes top-to-bottom {
+    0% {
+        transform: translate(0,40px);
+    }
+
+    50% {
+        transform: translate(0,20px);
+    }
+
+    100% {
+        transform: translate(0,0);
+    }
+}
+.views-bottom-to-top {
+    transform: translate(0,40px);
+    animation: bottom-to-top 1s linear;
+}
+@keyframes bottom-to-top {
+    0% {
+        transform: translate(0,0);
+    }
+    50% {
+        transform: translate(0,20px);
+    }
+    100% {
+        transform: translate(0,40px);
+    }
+}
+
 
 /*padding top percentage*/
 .pt-40vh {
@@ -321,7 +385,7 @@ ul.timeline > li {
 }
 
 #contact-form {
-    padding-top: 15vh;
+    padding-top: 20vh;
     padding-bottom: 20vh;
     animation: fadeIn2 0.8s linear;
     opacity: 1;
@@ -329,17 +393,17 @@ ul.timeline > li {
 
 @keyframes fadeIn2 {
     0% {
-        padding-top: 17vh;
+        padding-top: 22vh;
         opacity: 0;
     }
 
     50% {
-        padding-top: 16vh;
+        padding-top: 21vh;
         opacity: 0.5;
     }
 
     100% {
-        padding-top: 15vh;
+        padding-top: 20vh;
         opacity: 1;
     }
 }
@@ -496,6 +560,7 @@ ul.timeline > li {
         background: none;
     }
 }
+
 .toast-notification-show-failed {
     top: 55px;
     background: #9c0909;

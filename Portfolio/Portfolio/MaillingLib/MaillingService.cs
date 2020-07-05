@@ -40,8 +40,7 @@ namespace Portfolio.MaillingLib
                 myMail.Subject = emailSubject;
                 myMail.SubjectEncoding = Encoding.UTF8;
 
-                myMail.Body = "Hi, this is " + message.Gender + " " + message.FirstName + " " + message.LastName + " from " + message.Company + ".\n\n"
-                              + "We are located at " + message.CompanyRegion + ", " + message.CompanyLocation + "\n"
+                myMail.Body = "Hi, this is " + message.Gender + " " + message.FirstName + " " + message.LastName + ".\n\n"
                               + message.ExtraComment + ".\n\n"
                               + "My Email: " + message.Email +"\n"
                               + "My Mobile: " + message.Mobile + "\n";

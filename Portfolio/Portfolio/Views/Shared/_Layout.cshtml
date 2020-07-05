@@ -3,12 +3,20 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Portfolio</title>
+    <title>@ViewData["Title"] - Shawn Chen</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    <div id="views">
+        <div class="views-bottom-to-top">
+            <h5 class="pr-1 text-white mb-0 views-num-top">@ViewBag.Views</h5>
+            <h5 class="pr-1 text-white mb-0 views-num-bottom">@ViewBag.Views</h5>
+            <h5 class="pr-1 text-white mb-0 views-num-extender">@ViewBag.Views</h5>
+        </div>
+        <p class="mb-0 pr-2"> views</p>
+    </div>
     <nav class="navbar fixed-top navbar-expand-sm navbar-toggleable-sm navbar-dark bg-black box-shadow">
         <div class="container">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="AboutMe">Shawn Chen</a>
@@ -45,19 +53,57 @@
             @RenderBody()
         </main>
     </div>
+    @section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/lib/vue/vue-v2.6.11.js"></script>
     <script src="~/lib/vue/axios-v0.19.2.js"></script>
-    @RenderSection("Scripts", required: false)
     <script src="~/js/site.js"></script>
     <script src="~/js/vue-layout.js"></script>
     <script>
         $(window).on('load', function () {
 
+            refreshViews();
+
             $('.navbar-nav ul li div').removeClass('border-div-active').addClass('border-div');
 
             $('#@ViewContext.RouteData.Values["action"].ToString()').parent().find('div').addClass('border-div-active').removeClass('border-div');
-        })
+
+        });
+
+        window.setInterval(refreshViews, 5000);
+
+        function refreshViews() {
+            var current = $('#views .views-num-extender').html();
+            $.ajax({
+                type: 'GET',
+                url: '../api/GetViews',
+                dataType: 'text',
+                async:true,
+                success: function (data) {
+                    if (parseInt(data) != parseInt(current)) {
+                        if ($('#views div').hasClass('views-bottom-to-top')) {
+                            $('#views div').find('.views-num-extender').html(data);
+                            $('#views div').find('.views-num-bottom').html(data).parent().removeClass('views-bottom-to-top').addClass('views-top-to-bottom');
+                        }
+                        else if ($('#views div').hasClass('views-top-to-bottom')) {
+                            $('#views div').find('.views-num-extender').html(data);
+                            $('#views div').find('.views-num-top').html(data).parent().removeClass('views-top-to-bottom').addClass('views-bottom-to-top');
+                        }
+                    }
+                }, error(xhr) {
+                    if ($('#views div').hasClass('views-bottom-to-top')) {
+                        $('#views div').find('.views-num-extender').html('0');
+                        $('#views div').find('.views-num-bottom').html('0').parent().removeClass('views-bottom-to-top').addClass('views-top-to-bottom');
+                    }
+                    else if ($('#views div').hasClass('views-top-to-bottom')) {
+                        $('#views div').find('.views-num-extender').html('0');
+                        $('#views div').find('.views-num-top').html('0').parent().removeClass('views-top-to-bottom').addClass('views-bottom-to-top');
+                    }
+                }
+            });
+        }
     </script>
 </body>
 </html>
