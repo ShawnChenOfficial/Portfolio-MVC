@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Portfolio.Data;
+using Portfolio.Models;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -21,9 +22,17 @@ namespace Portfolio.Controllers
             this._context = context;
         }
 
-        public string GetViews()
+        public string GetViewers()
         {
-            return _context.ViewHistory.Count().ToString();
+            var x = _context.ViewHistory.GroupBy(g => g.IP).Select(s => s.Max(m => m.UTC_DateTime)).Count().ToString();
+
+            return x;
+        }
+
+
+        public List<ViewHistory> GetViewsWithDetails()
+        {
+            return _context.ViewHistory.ToList();
         }
     }
 }

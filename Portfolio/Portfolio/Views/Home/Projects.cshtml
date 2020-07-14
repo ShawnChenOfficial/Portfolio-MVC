@@ -1,13 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Projects";
 }
+<style>
+
+</style>
 <div class="text-center pt-40vh" id="first-Page">
     <div class="container">
-        <h5>While 2 years+ study, i have done some</h5>
+        <h5>With 2 years+ study, i have done some</h5>
         <h1 class="text-white">Projects</h1>
-        <p>including web application development, cloud hosting & deployement solution, database development and Android development. Mostly, i played as a system designer and programer within a team to deliver a quality application to meet the requirement for either course projects or real clients.</p>
-        <div class="text-center border-div-trigger w-200px m-auto pt-2">
-            <a class="text-decoration-none" asp-controller="Home" asp-action="Contact">Contact with me now</a>
+        <p>including <strong class="text-white">web application development</strong>, <strong class="text-white">cloud hosting & deployement solution</strong>, <strong class="text-white">database development</strong> and <strong class="text-white">Android development</strong>. Mostly, I have been a <strong class="text-white">system designer</strong> and <strong class="text-white">programer</strong> within a team to deliver a quality application to meet the requirement for course projects or real clients. Apart of the skills I have learned from my course, also, I have done a lot of <strong class="text-white">self-researches</strong> in terms of web application development, web security and cloud computing deployement as I really want to be a full-stack developer in the future.</p>
+        <div class="text-center border-div-trigger w-80px m-auto pt-2">
+            <a class="text-decoration-none" asp-controller="Home" asp-action="Contact">Email Me</a>
             <div class="border-div"></div>
         </div>
     </div>
@@ -19,12 +22,18 @@
             <div class="card mb-5 bg-none">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src="/images/FXV_thumb.png" class="card-img vertical-middle" alt="...">
+                        <div class="vertical-middle" style="height: fit-content;">
+                            <span class="position-absolute top-left"></span>
+                            <span class="position-absolute top-right"></span>
+                            <span class="position-absolute bottom-left"></span>
+                            <span class="position-absolute bottom-right"></span>
+                            <img src="/images/FXV_thumb.png" class="card-img" alt="...">
+                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title text-white">FXV fitness management system</h5>
-                            <p class="card-text">A web application provides a solution to manage athlete testing data, and organization & team members. This web application designed to be used in field of human performance management for the fitness, training, coaching, and corporate industries. The application is still a beta version and keeps updated. As this is a group project, I'm the development team leader who is responsible for assigning tasks to other developers and also in charge of front-end, back-end and database development.</p>
+                            <p class="card-text text-left">This web application is used in field of human performance management for the fitness, training, coaching, and corporate industries. The application is based on <strong class="text-white">ASP.Net Core MVC framework</strong>, and requires heaps of researches in field of Web security (like CSRF and CORS), extension usage of frameworks/packages (like of identity, authentication, authorization, entity frameworks, etc), data analysis and visualization, etc.<br />As this is a group project, I'm the <strong class="text-white">development team leader</strong> who is responsible for task analysis and assigning tasks to other developers, and also in charge of <strong class="text-white">front-end, back-end and database development</strong>.</p>
                             <div class="text-center border-div-trigger w-120px m-auto">
                                 <a class="text-decoration-none" target="_blank" href="https://www.fxv.co.nz">Go to System</a>
                                 <div class="border-div"></div>
@@ -36,14 +45,20 @@
             <div class="card mb-5 bg-none">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src="/images/PortfolioScreenShot_thumb.png" class="card-img vertical-middle" alt="...">
+                        <div class="vertical-middle" style="height: fit-content;">
+                            <span class="position-absolute top-left"></span>
+                            <span class="position-absolute top-right"></span>
+                            <span class="position-absolute bottom-left"></span>
+                            <span class="position-absolute bottom-right"></span>
+                            <img src="/images/PortfolioScreenShot_thumb.png" class="card-img" alt="...">
+                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title text-white">My Portfolio</h5>
-                            <p class="card-text">
+                            <p class="card-text text-left">
                                 This is my portfolio website written in
-                                C# based on Asp.net Core MVC framework. The purpose is to show the personal information and skills. The source code has been open sourced on GitHub.
+                                C# based on Asp.net Core MVC framework. The purpose is to show my personal information and skills. The source code has been open sourced on GitHub.
                             </p>
                             <div class="text-center border-div-trigger w-120px m-auto">
                                 <a class="text-decoration-none" target="_blank" href="https://github.com/ShawnChenOfficial/Shawn-s-Portfolio">Go to GitHub</a>
@@ -63,12 +78,18 @@
             <div class="card mb-5 bg-none">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src="/images/cloud-computing.png" class="card-img vertical-middle" alt="...">
+                        <div class="vertical-middle" style="height: fit-content;">
+                            <span class="position-absolute top-left"></span>
+                            <span class="position-absolute top-right"></span>
+                            <span class="position-absolute bottom-left"></span>
+                            <span class="position-absolute bottom-right"></span>
+                            <img src="/images/cloud-computing.png" class="card-img" alt="...">
+                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title text-white">Cloud hosting solution</h5>
-                            <p class="card-text">As a system designer, the quality and cost effectively solutions provided based on 3 scenarios given by Tutor. Each scenario represents different business scale of the client with different requirements.</p>
+                            <p class="card-text text-left">As a system designer, the high quality and cost effectively solutions provided are based on 3 scenarios given by the Tutor. Each scenario represents different business scale of the client with different requirements which are required different cloud computing solution from <strong class="text-white">Iaas, Laas to k8s(Kubernetes)</strong>.</p>
                             <div class="text-center border-div-trigger w-120px m-auto">
                                 <a class="text-decoration-none" target="_blank" href="https://github.com/ShawnChenOfficial/Cloud-Hosting-Solution-for-TradeMe">Go to GitHub</a>
                                 <div class="border-div"></div>
@@ -87,12 +108,18 @@
             <div class="card mb-5 bg-none">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src="/images/CarRental_thumb.png" class="card-img vertical-middle" alt="...">
+                        <div class="vertical-middle" style="height: fit-content;">
+                            <span class="position-absolute top-left"></span>
+                            <span class="position-absolute top-right"></span>
+                            <span class="position-absolute bottom-left"></span>
+                            <span class="position-absolute bottom-right"></span>
+                            <img src="/images/CarRental_thumb.png" class="card-img" alt="...">
+                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title text-white">Database for Car Rental System</h5>
-                            <p class="card-text">A database project designed while the I was studying in 2nd year of BIT. A database solution provided to meet the requirements of a car rental company. This could help to better manage their daily businesses.</p>
+                            <p class="card-text text-left">A database project designed while I was studying in my 2nd year of my course. A database solution was provided to meet the requirements of a car rental company. This could help to better manage their daily businesses.</p>
                             <div class="text-center border-div-trigger w-120px m-auto">
                                 <a class="text-decoration-none" target="_blank" href="https://github.com/ShawnChenOfficial/Database-for-Car-Rental-System">Go to GitHub</a>
                                 <div class="border-div"></div>
@@ -111,12 +138,18 @@
             <div class="card mb-5 bg-none">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <img src="/images/kiwiLearn_thumb.png" class="card-img vertical-middle" alt="...">
+                        <div class="vertical-middle" style="height: fit-content;">
+                            <span class="position-absolute top-left"></span>
+                            <span class="position-absolute top-right"></span>
+                            <span class="position-absolute bottom-left"></span>
+                            <span class="position-absolute bottom-right"></span>
+                            <img src="/images/kiwiLearn_thumb.png" class="card-img" alt="...">
+                        </div>
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title text-white">Mobile application</h5>
-                            <p class="card-text">This is an Android application project while I was studying in 2nd year of BIT. This mobile application was designed to provide a platform for those people who run private classes to teach people, or people who wants to find a private class to learn something. Authorized teachers could post their classes information on this platform, and everyone could view all the class information based on categories. As it was a group project, I was the system designer and only programmer to implement the entire system.</p>
+                            <p class="card-text text-left">This is an Android application project I created while I was studying in my 2nd year of BIT. This mobile application was designed to provide a platform for those people who run private classes to teach people, or people who wants to find a private class to learn something. Authorized teachers can post their classes information on this platform, and everyone can view the class information based on the categories. As it was a group project, I was the system designer and developer to implement this system.</p>
                             <div class="text-center border-div-trigger w-120px m-auto">
                                 <a class="text-decoration-none" target="_blank" href="https://github.com/ShawnChenOfficial/Kiwi-Learn">Go to GitHub</a>
                                 <div class="border-div"></div>
@@ -128,65 +161,3 @@
         </div>
     </div>
 </div>
-<span class="material-icons" id="Top">
-    arrow_upward
-</span>
-<span class="material-icons" id="furtherInfo">
-    arrow_downward
-</span>
-<script>$(window).scroll(function () {
-        var current = $(document).scrollTop();
-        var firstP = $('#first-Page').offset().top;
-        var secondP = $('#second-Page').offset().top;
-        var thirdP = $('#third-Page').offset().top;
-        var forthP = $('#forth-Page').offset().top;
-
-        if (!ToDisableNavigationArrows()) {
-            if (current <= (firstP + 10)) {
-                $('#furtherInfo').css({ display: 'block' });
-            }
-            else if (current > (secondP - 40) && current <= secondP + 100) {
-                $('#furtherInfo').css({ display: 'block' });
-            }
-            else if (current > (thirdP - 40) && current <= thirdP + 100) {
-                $('#furtherInfo').css({ display: 'block' });
-            }
-            else if (current > (forthP - 40) && current <= forthP + 100) {
-                $('#furtherInfo').css({ display: 'block' });
-            }
-            else {
-                $('#furtherInfo').css({ display: 'none' });
-            }
-        }
-    });
-
-    $('#furtherInfo').click(function () {
-        var current = $(document).scrollTop();
-        var firstP = $('#first-Page').offset().top;
-        var secondP = $('#second-Page').offset().top;
-        var thirdP = $('#third-Page').offset().top;
-        var forthP = $('#forth-Page').offset().top;
-        var fifthP = $('#fifth-Page').offset().top;
-
-        if (current <= (firstP + 10)) {
-            $("html, body").animate({ scrollTop: secondP + 100 }, 1000);
-            $("html, body").animate({ scrollTop: secondP - 60 }, 500);
-            $("html, body").animate({ scrollTop: secondP + 20 }, 400);
-            $("html, body").animate({ scrollTop: secondP }, 300);
-        }
-        else if (current > (secondP - 40) && current <= secondP + 100) {
-            $("html, body").animate({ scrollTop: thirdP + 100 }, 1000);
-            $("html, body").animate({ scrollTop: thirdP - 60 }, 500);
-            $("html, body").animate({ scrollTop: thirdP + 20 }, 400);
-            $("html, body").animate({ scrollTop: thirdP }, 300);
-        }
-        else if (current > (thirdP - 40) && current <= thirdP + 100) {
-            $("html, body").animate({ scrollTop: forthP + 100 }, 1000);
-            $("html, body").animate({ scrollTop: forthP - 60 }, 500);
-            $("html, body").animate({ scrollTop: forthP + 20 }, 400);
-            $("html, body").animate({ scrollTop: forthP }, 300);
-        }
-        else if (current > (forthP - 40) && current <= forthP + 100) {
-            $("html, body").animate({ scrollTop: fifthP + 100 }, 500);
-        }
-    });</script>

@@ -11,7 +11,7 @@ namespace Portfolio.Models
         public string FirstName { get; set; }
         [Required(ErrorMessage = "Please enter your lastname.")]
         [DataType(DataType.Text)]
-        [Display(Name = "Lastname:")]
+        [Display(Name = "Last Name:")]
         public string LastName { get; set; }
         [Required]
         [DataType(DataType.Text)]

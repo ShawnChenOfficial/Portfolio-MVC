@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
@@ -55,7 +54,7 @@ namespace Portfolio.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Contact(Message message)
+        public async Task<IActionResult> Contact(Message message)
         {
             if (!ModelState.IsValid)
             {
@@ -79,7 +78,7 @@ namespace Portfolio.Controllers
 
             try
             {
-                result = new MaillingLib.MailingService(_configuration).Sending(message);
+                result = await new MaillingLib.MailingService(_configuration).SendAsync(message);
             }
             catch (Exception e)
             {
@@ -96,7 +95,7 @@ namespace Portfolio.Controllers
 
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            ViewBag.Views = _context.ViewHistory.Count().ToString();
+            ViewBag.Views = _context.ViewHistory.GroupBy(g => g.IP).Select(s => s.Max(m => m.UTC_DateTime)).Count().ToString();
         }
     }
 }

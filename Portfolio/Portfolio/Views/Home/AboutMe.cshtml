@@ -3,13 +3,13 @@
 }
 <div class="text-center pt-20vh" id="first-Page-20vh">
     <div class="container">
-        <div class="pb-5" style="background-image:url(/images/profile_thumb.png);background-repeat: no-repeat;background-size: cover;height: 300px;width: 300px;border-radius: 150px;margin: auto;"></div>
+        <div class="pb-5 profile-picture"></div>
         <h1 class="text-white text-huge pt-4">Shawn Chen</h1>
         <p class="pt-3 w-75 m-auto">
-            I'm in the final year of Bachelor of Information Technology at the Southern Institute of Technology in Invercargill campus. I am a programmer who loves programming and keeps <strong class="text-white">research</strong> and <strong class="text-white">learning</strong> new skills related in IT, and I would like to be a full-stack in future.
+            I'm in the final year of a Bachelor of Information Technology at the Southern Institute of Technology in Invercargill. I am a programmer who loves programming and i keep  <strong class="text-white">researching</strong> and <strong class="text-white">learning</strong> new skills related to IT, as I would like to be a full-stack in future.
         </p>
-        <div class="text-center border-div-trigger w-200px m-auto pt-2">
-            <a class="text-decoration-none" asp-controller="Home" asp-action="Contact">Contact with me now</a>
+        <div class="text-center border-div-trigger w-80px m-auto pt-2">
+            <a class="text-decoration-none" asp-controller="Home" asp-action="Contact">Email Me</a>
             <div class="border-div"></div>
         </div>
     </div>
@@ -23,7 +23,7 @@
             <strong class="text-white">front-end</strong> and
             <strong class="text-white">back-end</strong>
             to support creating web applications.
-            Also, I would like to 
+            Also, I would like to
             <strong class="text-white">learn</strong>
             new techniques which could be useful and helpful for web application development.
         </p>
@@ -62,53 +62,7 @@
         </div>
     </div>
 </div>
-<span class="material-icons" id="Top">
-    arrow_upward
-</span>
-<span class="material-icons" id="furtherInfo">
-    arrow_downward
-</span>
 <div id="hintBox" class="container-fluid pt-3 pb-3">
     <p class="text-left m-auto">This website has been open sourced on Github, and the use rights are owned by the author only (Shawn Chen). The purpose of the website is only for showing the personal skills, not for commercial use. If necessary, please contact me in time.</p>
     <button id="understand" class="btn btn-primary m-auto">Understood</button>
 </div>
-<script>
-
-    $('#understand').on('click', function () {
-        $('#hintBox').css('display', 'none');
-    });
-
-    $(window).scroll(function () {
-        var current = $(document).scrollTop();
-        var firstP = $('#first-Page-20vh').offset().top;
-        var secondP = $('#second-Page').offset().top;
-
-        if (!ToDisableNavigationArrows()) {
-            if (current <= (firstP + 10)) {
-                $('#furtherInfo').css({ display: 'block' });
-            }
-            else if (current > (secondP - 40) && current <= secondP + 100) {
-                $('#furtherInfo').css({ display: 'block' });
-
-            }
-            else {
-                $('#furtherInfo').css({ display: 'none' });
-            }
-        }
-    });
-
-    $('#furtherInfo').click(function () {
-        var current = $(document).scrollTop();
-        var firstP = $('#first-Page-20vh').offset().top;
-        var secondP = $('#second-Page').offset().top;
-
-        if (current <= (firstP + 10)) {
-            $("html, body").animate({ scrollTop: secondP + 100 }, 1000);
-            $("html, body").animate({ scrollTop: secondP - 60 }, 500);
-            $("html, body").animate({ scrollTop: secondP + 20 }, 400);
-            $("html, body").animate({ scrollTop: secondP }, 300);
-        }
-        else if (current > (secondP - 40) && current <= secondP + 100) {
-            $("html, body").animate({ scrollTop: $('#third-Page').offset().top + 100 }, 500);
-        }
-    });</script>
