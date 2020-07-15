@@ -1,8 +1,8 @@
 ﻿var viewers = new Vue({
     el: '#views',
     data: {
-        url_new: 'api/NewViewer',
-        url_refresh: 'api/GetViewers',
+        url_new: '/api/NewViewer',
+        url_refresh: '/api/GetViewers',
         ViewersTopValue: _global_params.InitialViewers,
         ViewersBottomValue: _global_params.InitialViewers,
         ViewersHideValue: _global_params.InitialViewers,
