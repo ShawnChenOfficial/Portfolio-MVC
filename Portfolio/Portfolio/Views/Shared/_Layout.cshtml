@@ -10,10 +10,10 @@
 </head>
 <body>
     <div id="views">
-        <div class="views-bottom-to-top">
-            <h5 class="pr-1 text-white mb-0 views-num-top">@ViewBag.Views</h5>
-            <h5 class="pr-1 text-white mb-0 views-num-bottom">@ViewBag.Views</h5>
-            <h5 class="pr-1 text-white mb-0 views-num-extender">@ViewBag.Views</h5>
+        <div v-bind:class="ViewersClass">
+            <h5 class="pr-1 text-white mb-0 views-num-top">{{ViewersTopValue}}</h5>
+            <h5 class="pr-1 text-white mb-0 views-num-bottom">{{ViewersBottomValue}}</h5>
+            <h5 class="pr-1 text-white mb-0 views-num-extender">{{ViewersHideValue}}</h5>
         </div>
         <p class="mb-0 pr-2"> viewers</p>
     </div>
@@ -59,7 +59,7 @@
                     Top
                 </p>
             </div>
-            <div id="furtherInfo" >
+            <div id="furtherInfo">
                 <p class="mb-0">
                     Next
                 </p>
@@ -90,15 +90,22 @@
     }
     <script src="~/lib/vue/vue-v2.6.11.js"></script>
     <script src="~/lib/vue/axios-v0.19.2.js"></script>
+    <script>
+        var _global_params = new Vue({
+            data: {
+                InitialViewers: @ViewBag.Viewers,
+            },
+        })
+    </script>
     <script src="~/js/site.js"></script>
-    <script src="~/js/vue-layout.js"></script>
+    <script src="~/js/vue-script.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171792787-1"></script>
     <script>
      $(window).on('load', function () {
-        refreshViewers();
         $('.navbar-nav ul li div').removeClass('border-div-active').addClass('border-div');
         $('#@ViewContext.RouteData.Values["action"].ToString()').parent().find('div').addClass('border-div-active').removeClass('border-div');
-});</script>
+     });
+    </script>
 </body>
 </html>

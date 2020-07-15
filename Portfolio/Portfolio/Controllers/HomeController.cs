@@ -19,25 +19,15 @@ namespace Portfolio.Controllers
         private readonly ILogger<HomeController> _logger;
         private IConfiguration _configuration;
         private ApplicationDbContext _context;
-        private IHttpContextAccessor _accessor;
 
-        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, ApplicationDbContext context, IHttpContextAccessor accessor)
+        public HomeController(ILogger<HomeController> logger, IConfiguration configuration, ApplicationDbContext context)
         {
             _logger = logger;
             this._configuration = configuration;
             this._context = context;
-            this._accessor = accessor;
         }
-        public async Task<IActionResult> AboutMe()
+        public IActionResult AboutMe()
         {
-
-            await _context.ViewHistory.AddAsync(new ViewHistory
-            {
-                IP = _accessor.HttpContext.Connection.RemoteIpAddress.ToString()
-            });
-
-            await _context.SaveChangesAsync();
-
             return View();
         }
         public IActionResult Resume()
@@ -92,10 +82,9 @@ namespace Portfolio.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            ViewBag.Views = _context.ViewHistory.GroupBy(g => g.IP).Select(s => s.Max(m => m.UTC_DateTime)).Count().ToString();
+            ViewBag.Viewers = _context.ViewHistory.GroupBy(g => g.IP).Select(s => s.Max(m => m.UTC_DateTime)).Count().ToString();
         }
     }
 }
