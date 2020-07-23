@@ -13,7 +13,6 @@ $(window).scroll(function () {
         }
         else if (current > (secondP - 40) && current <= secondP + 100) {
             $('#furtherInfo').css({ display: 'block' });
-
         }
         else {
             $('#furtherInfo').css({ display: 'none' });
