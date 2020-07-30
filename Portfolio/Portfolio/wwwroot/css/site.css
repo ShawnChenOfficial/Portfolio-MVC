@@ -553,26 +553,8 @@ ul.timeline > li {
 /*vertical alignment*/
 .vertical-middle {
     position: relative;
-    top: 50%;
-    transform: translate(0,-50%);
-}
-
-@media (max-width:767px) {
-
-    .vertical-middle {
-        position: relative;
-        top: 0;
-        transform: translate(0,0);
-    }
-}
-
-@media (max-height:767px) {
-
-    .vertical-middle {
-        position: relative;
-        top: 0;
-        transform: translate(0,0);
-    }
+    top: 0%;
+    transform: translate(0,0%);
 }
 /*  down arrow button  */
 #furtherInfo {
