@@ -213,33 +213,6 @@ html {
 .w-220px {
     width: 220px !important;
 }
-/*hint box*/
-#hintBox {
-    background-color: rgba(0,0,0,0.9);
-    position: fixed;
-    z-index: 1200;
-    bottom: 0;
-    display: flex;
-    opacity: 1;
-    border-radius: 10px;
-    animation: hintBoxFadeIn 1.5s linear;
-}
-
-@keyframes hintBoxFadeIn {
-    0% {
-        opacity: 0.5;
-    }
-    25% {
-        opacity: 0.7;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-#hintBox p {
-    width: 80%;
-}
 /*nav*/
 nav {
     z-index: 1000;
@@ -336,20 +309,20 @@ body {
     background-color: rgba(0,0,0,0) !important;
 }
 
-#first-Page, #first-Page-10vh, #first-Page-15vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
+#first-Page, #first-Page-10vh, #first-Page-15vh, #second-Page, #third-Page, #forth-Page, #fifth-Page, #sixth-Page {
     height: 100vh;
     position: relative;
 }
 
 @media(max-width:767px) {
-    #first-Page, #first-Page-20vh, #first-Page-15vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
+    #first-Page, #first-Page-20vh, #first-Page-15vh, #second-Page, #third-Page, #forth-Page, #fifth-Page, #sixth-Page {
         height: auto;
         position: relative;
     }
 }
 
 @media(max-height:767px) {
-    #first-Page, #first-Page-20vh, #first-Page-15vh, #second-Page, #third-Page, #forth-Page, #fifth-Page {
+    #first-Page, #first-Page-20vh, #first-Page-15vh, #second-Page, #third-Page, #forth-Page, #fifth-Page, #sixth-Page {
         height: auto;
         position: relative;
     }
@@ -551,10 +524,48 @@ ul.timeline > li {
 }
 
 /*vertical alignment*/
-.vertical-middle {
-    position: relative;
-    top: 0%;
-    transform: translate(0,0%);
+
+@media(min-width:768px) {
+    .vertical-middle {
+        position: relative;
+        top: 50%;
+        transform: translate(0,-50%);
+    }
+}
+
+@media(max-width:767px){
+    .vertical-middle {
+        position: relative;
+        top: 0%;
+        transform: translate(0,0%);
+    }
+
+}
+/*vertical alignment for images on projects page*/
+@media(min-width:992px) {
+    .vertical-middle-img {
+        position: relative;
+        top: 0%;
+        transform: translate(0%,0%);
+    }
+}
+
+@media(max-width:767px) {
+    .vertical-middle-img {
+        position: relative;
+        top: 0%;
+        transform: translate(0%,0%);
+    }
+}
+
+@media(max-width:991px) {
+    @media(min-width:768px) {
+        .vertical-middle-img {
+            position: relative;
+            top: 50%;
+            transform: translate(0%,-50%);
+        }
+    }
 }
 /*  down arrow button  */
 #furtherInfo {
@@ -731,4 +742,9 @@ ul.timeline > li {
         top: -100px;
         background: none;
     }
+}
+
+
+.pointer{
+    cursor:pointer;
 }

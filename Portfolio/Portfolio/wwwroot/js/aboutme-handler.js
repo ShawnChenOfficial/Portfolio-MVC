@@ -1,8 +1,4 @@
-﻿$('#understand').on('click', function () {
-    $('#hintBox').css('display', 'none');
-});
-
-$(window).scroll(function () {
+﻿$(window).scroll(function () {
     var current = $(document).scrollTop();
     var firstP = $('#first-Page-20vh').offset().top;
     var secondP = $('#second-Page').offset().top;

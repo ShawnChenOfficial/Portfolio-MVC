@@ -4,6 +4,7 @@
     var secondP = $('#second-Page').offset().top;
     var thirdP = $('#third-Page').offset().top;
     var forthP = $('#forth-Page').offset().top;
+    var fifthP = $('#fifth-Page').offset().top;
 
     if (!ToDisableNavigationArrows()) {
         if (current <= (firstP + 10)) {
@@ -16,6 +17,9 @@
             $('#furtherInfo').css({ display: 'block' });
         }
         else if (current > (forthP - 40) && current <= forthP + 100) {
+            $('#furtherInfo').css({ display: 'block' });
+        }
+        else if (current > (fifthP - 40) && current <= fifthP  + 100) {
             $('#furtherInfo').css({ display: 'block' });
         }
         else {
@@ -31,6 +35,7 @@ $('#furtherInfo').click(function () {
     var thirdP = $('#third-Page').offset().top;
     var forthP = $('#forth-Page').offset().top;
     var fifthP = $('#fifth-Page').offset().top;
+    var sixthP = $('#sixth-Page').offset().top;
 
     if (current <= (firstP + 10)) {
         $("html, body").animate({ scrollTop: secondP + 100 }, 1000);
@@ -51,6 +56,12 @@ $('#furtherInfo').click(function () {
         $("html, body").animate({ scrollTop: forthP }, 300);
     }
     else if (current > (forthP - 40) && current <= forthP + 100) {
-        $("html, body").animate({ scrollTop: fifthP + 100 }, 500);
+        $("html, body").animate({ scrollTop: fifthP + 100 }, 1000);
+        $("html, body").animate({ scrollTop: fifthP - 60 }, 500);
+        $("html, body").animate({ scrollTop: fifthP + 20 }, 400);
+        $("html, body").animate({ scrollTop: fifthP }, 300);
+    }
+    else if (current > (fifthP - 40) && current <= fifthP + 100) {
+        $("html, body").animate({ scrollTop: sixthP + 100 }, 500);
     }
 });
