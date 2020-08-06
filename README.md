@@ -14,4 +14,6 @@ Download the project files
 ## Step 2:
 Update database based on the existing Migration files.
 
-CLI Command: dotnet ef database update
+###### CLI Command: dotnet ef database update
+
+###### Then configure the appsettings.json
