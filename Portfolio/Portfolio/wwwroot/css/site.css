@@ -526,10 +526,19 @@ ul.timeline > li {
 /*vertical alignment*/
 
 @media(min-width:768px) {
-    .vertical-middle {
-        position: relative;
-        top: 50%;
-        transform: translate(0,-50%);
+    @media(min-height:768px){
+        .vertical-middle {
+            position: relative;
+            top: 50%;
+            transform: translate(0,-50%);
+        }
+    }
+    @media(max-height:767px) {
+        .vertical-middle {
+            position: relative;
+            top: 0%;
+            transform: translate(0,0%);
+        }
     }
 }
 
