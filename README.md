@@ -1,5 +1,5 @@
 # Shawn's Portfolio
-A portfolio website written in C# and Vue.js from scratch, based on the ASP.NET Core MVC framework.
+A portfolio website written in C# and Vue.js (as the alternative of js) from scratch, based on the ASP.NET Core MVC framework.
 
 # Purpose
 The purpose is to show my personal information, awards I have won, and some projects I have done in my Bachelor degree study.
